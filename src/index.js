@@ -94,11 +94,17 @@ function Menu() {
 
             {pizzaNum > 0 ? (
 
-                <ul className="pizzas">
-                    {pizzas.map((pizza) => (
-                        <Pizza pizzaObj={pizza} key={pizza.name} />
-                    ))}
-                </ul>
+                <>
+
+                    <p>Authentic Italian cuisine. 6 creative dishes to choose from. All from our stone oven, all organic, all delicious.</p>
+
+                    <ul className="pizzas">
+                        {pizzas.map((pizza) => (
+                            <Pizza pizzaObj={pizza} key={pizza.name} />
+                        ))}
+                    </ul>
+
+                </>
 
             ) : (<p>We are still working on our menu. Please come back later...</p>)}
 
@@ -111,30 +117,32 @@ function Menu() {
 
 function Pizza({ pizzaObj }) {
 
-    if (pizzaObj.soldOut) {
-        return null;
-    }
-
     return (
 
-        <li className="pizza">
+        <li className={`pizza ${pizzaObj.soldOut ? "sold-out" : null}`}>
 
-            <div>
+            <>
 
                 <img src={pizzaObj.photoName} alt={pizzaObj.name} />
 
-            </div>
+            </>
 
 
             <div>
 
                 <h3>{pizzaObj.name}</h3>
                 <p>{pizzaObj.ingredients}</p>
-                <span>{pizzaObj.price}</span>
+
+                {pizzaObj.soldOut ?
+
+                    <span>SOLD OUT</span> :
+                    <span>{pizzaObj.price}</span>
+
+                }
 
             </div>
 
-        </li>
+        </li >
 
     );
 
@@ -145,8 +153,8 @@ function Footer() {
 
     const hour = new Date().getHours();
     const openHour = 12;
-    const closeHour = 22;
-    const isOpen = hour >= openHour && hour <= closeHour;
+    const closeHour = 24;
+    const isOpen = hour >= openHour && hour < closeHour;
 
     return (
 
@@ -171,17 +179,17 @@ function Order({ openHour, closeHour }) {
 
         <div className="order">
 
-            <div>
+            <>
 
                 <p>We are open from {openHour}:00 to {closeHour}:00. Come visit us or order online.</p>
 
-            </div>
+            </>
 
-            <div>
+            <>
 
                 <button className="btn">Order</button>
 
-            </div>
+            </>
 
         </div>
 
