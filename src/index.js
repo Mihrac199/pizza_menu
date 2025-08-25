@@ -1,7 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-
+import React from "react"
+import ReactDOM from "react-dom/client"
+import "./index.css"
 
 const pizzaData = [
     {
@@ -48,7 +47,6 @@ const pizzaData = [
     },
 ];
 
-
 function App() {
 
     return (
@@ -65,7 +63,6 @@ function App() {
 
 };
 
-
 function Header() {
 
     return (
@@ -79,7 +76,6 @@ function Header() {
     );
 
 };
-
 
 function Menu() {
 
@@ -114,7 +110,6 @@ function Menu() {
 
 };
 
-
 function Pizza({ pizzaObj }) {
 
     return (
@@ -148,7 +143,6 @@ function Pizza({ pizzaObj }) {
 
 };
 
-
 function Footer() {
 
     const hour = new Date().getHours();
@@ -171,7 +165,6 @@ function Footer() {
     );
 
 };
-
 
 function Order({ openHour, closeHour }) {
 
@@ -196,7 +189,6 @@ function Order({ openHour, closeHour }) {
     );
 
 };
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

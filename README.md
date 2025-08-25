@@ -1,3 +1,7 @@
-# Pizza Menu Project (React)
+# Pizza Menu Project
 
-You can place your pizza orders.
+Used Technologies;
+
+     1) CSS 3 
+     2) React
+          - Create React App
